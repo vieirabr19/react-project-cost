@@ -1,0 +1,22 @@
+.projects{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.projects header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+}
+
+.newproject{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.newproject header{
+  text-align: center;
+}

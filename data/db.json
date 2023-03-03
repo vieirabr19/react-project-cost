@@ -1,0 +1,198 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Projeto 1",
+      "budget": "8000",
+      "cost": 0,
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "services": []
+    },
+    {
+      "id": 2,
+      "name": "Projeto 2",
+      "budget": 4000,
+      "cost": 0,
+      "category": {
+        "id": 2,
+        "name": "Desenvolvimento"
+      },
+      "services": []
+    },
+    {
+      "id": 3,
+      "name": "Projeto 3",
+      "budget": "5000",
+      "cost": 5000,
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "services": [
+        {
+          "name": "Site 1",
+          "cost": "2000",
+          "description": "Descrição do serviço 1",
+          "id": "3ad580e0-5caa-46ff-9a37-49141dedbc81"
+        },
+        {
+          "name": "Site 2",
+          "cost": "2000",
+          "description": "Descrição do serviço 2",
+          "id": "67bb8b2c-804a-4347-87d2-e69d77ce60e2"
+        },
+        {
+          "name": "Site 3",
+          "cost": "200",
+          "description": "Descrição do serviço 3",
+          "id": "de366c0a-f308-442b-aee2-f8608d0ff0b7"
+        },
+        {
+          "name": "Site 4",
+          "cost": "300",
+          "description": "Descrição do serviço 4",
+          "id": "ed7ac609-6422-4b9a-a698-21962dd04b7a"
+        },
+        {
+          "name": "Site 5",
+          "cost": "200",
+          "description": "Descrição do serviço 5",
+          "id": "b5eb1d6b-6553-480d-867f-bbda2aefb764"
+        },
+        {
+          "name": "Site 6",
+          "cost": "300",
+          "description": "Descrição do serviço 6",
+          "id": "4104b2cc-b32c-41ea-bd2a-74dfa065c10a"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Projeto 4",
+      "budget": 4000,
+      "cost": 2000,
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "services": [
+        {
+          "name": "Desenvolvimento de site",
+          "cost": "2000",
+          "description": "Descrição do serviço 5",
+          "id": "de572c4e-2636-45d2-93ed-fdf037e39779"
+        }
+      ]
+    },
+    {
+      "name": "Projeto 5",
+      "budget": "2000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 5
+    },
+    {
+      "name": "Projeto 6",
+      "budget": "6000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 6
+    },
+    {
+      "name": "Projeto 7",
+      "budget": "8000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 7
+    },
+    {
+      "name": "Projeto 8",
+      "budget": "4000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 8
+    },
+    {
+      "name": "Projeto 9",
+      "budget": "3000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 9
+    },
+    {
+      "name": "Projeto 10",
+      "budget": "2000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 10
+    },
+    {
+      "name": "Projeto 11",
+      "budget": "100",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 11
+    },
+    {
+      "name": "Projeto 12",
+      "budget": "3000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 12
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
+}

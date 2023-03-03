@@ -1,0 +1,47 @@
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+}
+.card{
+  border: 1px solid #222;
+  padding-bottom: .2em;
+}
+.card h1{
+  background: #222;
+  color: #ffdd22;
+  padding: .2em .5em;
+  font-size: 1.2em;
+}
+.card p,
+.card div{
+  padding: .3em .5em;
+}
+.actions{
+  display: flex;
+  gap: .7em;
+  justify-content: flex-end;
+}
+.category{
+  display: flex;
+  gap: .5em;
+  align-items: center;
+}
+.category span{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: block;
+}
+.category span.infra{
+  background: #ffdd22;
+}
+.category span.desenvolvimento{
+  background: #0498b8;
+}
+.category span.design{
+  background: #d809dc;
+}
+.category span.planejamento{
+  background: #7f4604;
+}

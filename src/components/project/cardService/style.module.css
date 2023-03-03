@@ -1,0 +1,23 @@
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+}
+.card{
+  border: 1px solid #222;
+}
+.card h1{
+  background: #222;
+  color: #ffdd22;
+  padding: .2em .5em;
+  font-size: 1.2em;
+}
+.card p,
+.card div{
+  padding: .4em .5em;
+}
+.actions{
+  display: flex;
+  gap: .7em;
+  justify-content: flex-end;
+}

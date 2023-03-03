@@ -1,0 +1,14 @@
+.form_control{
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+}
+.form_control span {
+  font-size: .9em;
+  font-weight: bold;
+}
+.form_control input {
+  font-size: .9em;
+  padding: .3em;
+  border: 1px solid #ccc;
+}
