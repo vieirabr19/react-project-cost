@@ -100,6 +100,28 @@ function DetailProject(){
     .catch(err => console.log(err));
   }
 
+  const removeService = (id, cost) => {
+    setMessageType('');
+    setMessage('');
+
+    project.services = project.services.filter(service => service.id !== id);
+    project.cost = parseFloat(project.cost) - parseFloat(cost);
+    
+    fetch(`${BASE_URL}/${project.id}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(project)
+    })
+    .then(response => response.json())
+    .then(data => {
+      setProject(data);
+      setServices(data.services);
+      setMessageType('success');
+      setMessage('Serviço removido com sucesso!');
+    })
+    .catch(err => console.log(err));
+  }
+
   return (
     <div className={styles.detail}>
       {project.name && (<>
@@ -133,7 +155,7 @@ function DetailProject(){
           <header>
             <h1>Serviços</h1>
           </header>
-          <CardService services={services} />
+          <CardService services={services} removeService={removeService} />
         </>)}
 
     </div>

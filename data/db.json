@@ -26,7 +26,7 @@
       "id": 3,
       "name": "Projeto 3",
       "budget": "5000",
-      "cost": 5000,
+      "cost": 3600,
       "category": {
         "id": "1",
         "name": "Infra"
@@ -34,39 +34,15 @@
       "services": [
         {
           "name": "Site 1",
-          "cost": "2000",
+          "cost": "3000",
           "description": "Descrição do serviço 1",
-          "id": "3ad580e0-5caa-46ff-9a37-49141dedbc81"
-        },
-        {
-          "name": "Site 2",
-          "cost": "2000",
-          "description": "Descrição do serviço 2",
-          "id": "67bb8b2c-804a-4347-87d2-e69d77ce60e2"
+          "id": "6ec82df3-ab85-4267-a6ce-4aeb6483bd95"
         },
         {
           "name": "Site 3",
-          "cost": "200",
+          "cost": "600",
           "description": "Descrição do serviço 3",
-          "id": "de366c0a-f308-442b-aee2-f8608d0ff0b7"
-        },
-        {
-          "name": "Site 4",
-          "cost": "300",
-          "description": "Descrição do serviço 4",
-          "id": "ed7ac609-6422-4b9a-a698-21962dd04b7a"
-        },
-        {
-          "name": "Site 5",
-          "cost": "200",
-          "description": "Descrição do serviço 5",
-          "id": "b5eb1d6b-6553-480d-867f-bbda2aefb764"
-        },
-        {
-          "name": "Site 6",
-          "cost": "300",
-          "description": "Descrição do serviço 6",
-          "id": "4104b2cc-b32c-41ea-bd2a-74dfa065c10a"
+          "id": "3380742a-102d-4a4d-8e8a-f44b2ea6e6c6"
         }
       ]
     },
