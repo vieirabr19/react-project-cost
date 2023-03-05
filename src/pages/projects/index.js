@@ -11,12 +11,10 @@ const API_URL = 'http://localhost:500/projects';
 function Projects() {
   const location = useLocation();
   const [projects, setProjects] = useState([]);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
 
-  let message = '';
-  if(location.state){
-    message = location.state.message;
-  }
-
+  
   useEffect(() => {
     fetch(API_URL, {
       method: 'GET',
@@ -27,6 +25,30 @@ function Projects() {
     .catch(err => console.log(err));
   }, []);
 
+  useEffect(() => {
+    if(location.state){
+      setMessage(location.state.message);
+      setMessageType('success');
+    }
+  }, [location.state]);
+
+  const removeProject = (id) => {
+    setMessage('');
+    setMessageType('');
+
+    fetch(`${API_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(() => {
+      setProjects(projects.filter(project => project.id !== id));
+      setMessage('Projeto removido com sucesso!');
+      setMessageType('success');
+    })
+    .catch(err => console.log(err));
+  }
+
   return (
     <div className={styles.projects}>
       <header>
@@ -34,9 +56,9 @@ function Projects() {
         <Button to="/newproject" text="Criar projeto" />
       </header>
 
-      {message && <Alert type='success' message={message} />}
+      {message && <Alert type={messageType} message={message} />}
 
-      <ProjectCard data={projects} />
+      <ProjectCard data={projects} removeProject={removeProject} />
     </div>
   );
 }

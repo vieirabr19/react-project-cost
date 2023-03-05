@@ -31,8 +31,7 @@ function DetailProject(){
       setProject(data);
       setServices(data.services);
     })
-    .catch(err => console.error(err));
-    
+    .catch(err => console.error(err));    
   },[id]);
 
   function editPost(project){
@@ -73,17 +72,16 @@ function DetailProject(){
     setMessage('');
 
     const lastService = project.services[project.services.length -1]; // pega o último serviço adicionado
-    lastService.id = uuid();
-    const lastServiceCost = lastService.cost;
-    const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost);
-
+    lastService.id = uuid(); // cria um ID único para cada serviço
+    const newCost = parseFloat(project.cost) + parseFloat(lastService.cost); // soma o project cost + service cost criado
+    
     if(newCost > parseFloat(project.budget)){
       setMessageType('danger');
-      setMessage('Orçamento ultrapassado, verifique o valor do serviços!');
+      setMessage('Orçamento ultrapassado, verifique o valor do serviço!');
       project.services.pop();
       return;
     }
-
+    
     project.cost = newCost;
     
     fetch(`${BASE_URL}/${project.id}`, {
@@ -138,7 +136,7 @@ function DetailProject(){
           <p><strong>Total utilizado:</strong> {project.cost}</p>
         </div>}
 
-        {!editProject && <ProjectForm textBtn='Editar projeto' typeBtn='submit' handleSubmit={editPost} dataForm={project} />}
+        {!editProject && <ProjectForm textBtn='Editar projeto' typeBtn='submit' handleSubmit={editPost} projectData={project} />}
         </>)}
 
         <hr />
@@ -148,7 +146,7 @@ function DetailProject(){
           <Button type="button" text={!showFormService ? "Adicionar serviço" : "Cancelar"} action={toggleServiceForm} />
         </header>
 
-        {showFormService && <FormService typeBtn='submit' textBtn='Adicionar serviço' handleSubmit={createService} dataForm={project} />}
+        {showFormService && <FormService typeBtn='submit' textBtn='Adicionar serviço' handleSubmit={createService} projectData={project} />}
 
         {services.length > 0 && (<>
           <hr />

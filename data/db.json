@@ -50,10 +50,10 @@
       "id": 4,
       "name": "Projeto 4",
       "budget": 4000,
-      "cost": 2000,
+      "cost": 3100,
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "3",
+        "name": "Design"
       },
       "services": [
         {
@@ -61,6 +61,24 @@
           "cost": "2000",
           "description": "Descrição do serviço 5",
           "id": "de572c4e-2636-45d2-93ed-fdf037e39779"
+        },
+        {
+          "name": "Blog ",
+          "cost": "600",
+          "description": "Descrição do blog",
+          "id": "ea92c6bc-00a4-40e7-a1cb-9e818fdb635e"
+        },
+        {
+          "name": "Site 2",
+          "cost": "200",
+          "description": "Descrição do serviço 2",
+          "id": "6012e8f1-a457-49fd-9fcd-6403e9b94056"
+        },
+        {
+          "name": "Site 3",
+          "cost": "300",
+          "description": "Descrição do serviço",
+          "id": "5cfdba14-bd25-4844-9b60-fe9e8af4c84a"
         }
       ]
     },
@@ -88,10 +106,10 @@
     },
     {
       "name": "Projeto 7",
-      "budget": "8000",
+      "budget": "2000",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "1",
+        "name": "Infra"
       },
       "cost": 0,
       "services": [],
@@ -99,7 +117,7 @@
     },
     {
       "name": "Projeto 8",
-      "budget": "4000",
+      "budget": "3000",
       "category": {
         "id": "4",
         "name": "Planejamento"
@@ -110,10 +128,10 @@
     },
     {
       "name": "Projeto 9",
-      "budget": "3000",
+      "budget": "3444",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "3",
+        "name": "Design"
       },
       "cost": 0,
       "services": [],
@@ -121,10 +139,10 @@
     },
     {
       "name": "Projeto 10",
-      "budget": "2000",
+      "budget": "3000",
       "category": {
-        "id": "3",
-        "name": "Design"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": [],
@@ -132,7 +150,7 @@
     },
     {
       "name": "Projeto 11",
-      "budget": "100",
+      "budget": "4433",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"

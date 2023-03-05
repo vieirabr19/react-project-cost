@@ -4,9 +4,9 @@ import Select from '../../select';
 import { useEffect, useState } from 'react';
 import Button from '../../button';
 
-function ProjectForm({textBtn, typeBtn, handleSubmit, dataForm }){
+function ProjectForm({textBtn, typeBtn, handleSubmit, projectData }){
   const [category, setCategory] = useState([]);
-  const [project, setProject] = useState(dataForm || {});
+  const [project, setProject] = useState(projectData || {});
 
   useEffect(() => {
     getCategory();

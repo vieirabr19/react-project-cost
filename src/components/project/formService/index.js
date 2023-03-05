@@ -4,7 +4,7 @@ import styles from './style.module.css';
 import InputText from '../../inputText';
 import Button from '../../button';
 
-function FormService({typeBtn, textBtn, handleSubmit, dataForm}){
+function FormService({typeBtn, textBtn, handleSubmit, projectData}){
   const [service, setService] = useState([]);
 
   const handleChange = (e) =>{
@@ -16,8 +16,8 @@ function FormService({typeBtn, textBtn, handleSubmit, dataForm}){
 
   const submit = (e) =>{
     e.preventDefault();
-    dataForm.services.push(service);
-    handleSubmit(dataForm);
+    projectData.services.push(service);
+    handleSubmit(projectData);
   }
 
   return (

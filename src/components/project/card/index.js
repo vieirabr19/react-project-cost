@@ -1,7 +1,7 @@
 import ButtonOutline from '../../buttonOutline';
 import styles from './style.module.css';
 
-function ProjectCard({data}) {
+function ProjectCard({data, removeProject}) {
   return (
     <div className={styles.cards}>
       {data.length > 0 && data.map(item => (
@@ -15,7 +15,7 @@ function ProjectCard({data}) {
           </p>
           <div className={styles.actions}>
             <ButtonOutline to={`/detailproject/${item.id}`} text='Detalhes' />
-            <ButtonOutline type='button' text='Excluir' />
+            <ButtonOutline type='button' text='Excluir' onClick={() => removeProject(item.id)} />
           </div>
         </div>
       ))}
