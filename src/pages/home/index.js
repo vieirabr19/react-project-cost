@@ -1,6 +1,6 @@
 import styles from './style.module.css';
 import ImgCost from '../../img/savings.svg'
-import Button from '../../components/button';
+import Button from '../../shared/components/button';
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
         <p>Comece a gerenciar seus projetos agora mesmo!</p>
       </header>
       <div>
-        <Button to="/newproject" text="Criar projeto" />
+        <Button to='/newproject' text='Criar projeto' />
       </div>
       <div>
         <img src={ImgCost} alt="Cost" />

@@ -1,47 +1,58 @@
 .cards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5em;
+  gap: 1em;
 }
 .card{
-  border: 1px solid #222;
-  padding-bottom: .2em;
+  border: 1px solid rgb(var(--gray), .3);
+  padding-bottom: .5em;
+}
+.card p{
+  padding: 0 .4em;
+  font-size: .9em;
+  margin-top: .6em;
+}
+.card p hr{
+  border: none;
+  background: rgb(var(--gray), .3);
+  height: 1px;
 }
 .card h1{
-  background: #222;
-  color: #ffdd22;
-  padding: .2em .5em;
+  background: rgb(var(--gray));
+  color: rgb(var(--orange));
   font-size: 1.2em;
+  padding: .2em .4em;
 }
-.card p,
-.card div{
-  padding: .3em .5em;
-}
-.actions{
-  display: flex;
-  gap: .7em;
-  justify-content: flex-end;
-}
+
 .category{
   display: flex;
-  gap: .5em;
   align-items: center;
+  gap: .4em;
 }
 .category span{
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  display: block;
 }
-.category span.infra{
-  background: #ffdd22;
+.category .infra{
+  background: rgb(var(--infrastructure));
 }
-.category span.desenvolvimento{
-  background: #0498b8;
+.category .desenvolvimento{
+  background: rgb(var(--development));
 }
-.category span.design{
-  background: #d809dc;
+.category .design{
+  background: rgb(var(--design));
 }
-.category span.planejamento{
-  background: #7f4604;
+.category .planejamento{
+  background: rgb(var(--planning));
+}
+
+.actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: .5em;
+}
+.footer{
+  border-top: 1px solid rgba(var(--gray), .4);
+  margin-top: .7em;
 }

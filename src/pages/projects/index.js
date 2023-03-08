@@ -1,64 +1,66 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import Card from '../../components/project/card';
 
+import Alert from '../../shared/components/alert';
+import Button from '../../shared/components/button';
 import styles from './style.module.css';
-import Button from '../../components/button';
-import ProjectCard from '../../components/project/card';
-import Alert from '../../components/alert';
 
-const API_URL = 'http://localhost:500/projects';
+const URL_API = 'http://localhost:500/projects';
 
-function Projects() {
+function Projects(){
   const location = useLocation();
-  const [projects, setProjects] = useState([]);
-  const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('');
+  const [message, setMessage] = useState();
+  const [messageType, setMessageType] = useState();
+  const [project, setProject] = useState([]);
 
-  
   useEffect(() => {
-    fetch(API_URL, {
+    if(location.state){
+      setMessageType('success');
+      setMessage(location.state.message);
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    fetch(URL_API, {
       method: 'GET',
       headers: {'Content-Type': 'application/json'}
     })
     .then(response => response.json())
-    .then(data => setProjects(data))
-    .catch(err => console.log(err));
+    .then(data => setProject(data))
+    .catch(err => console.error(err));
   }, []);
 
-  useEffect(() => {
-    if(location.state){
-      setMessage(location.state.message);
-      setMessageType('success');
-    }
-  }, [location.state]);
-
   const removeProject = (id) => {
-    setMessage('');
     setMessageType('');
+    setMessage('');
 
-    fetch(`${API_URL}/${id}`, {
+    fetch(`${URL_API}/${id}`, {
       method: 'DELETE',
-      headers: {'Content-Type': 'application/json'}
+      headers: { 'Content-Type': 'application/json'}
     })
     .then(response => response.json())
     .then(() => {
-      setProjects(projects.filter(project => project.id !== id));
-      setMessage('Projeto removido com sucesso!');
       setMessageType('success');
+      setMessage('Projeto removido com sucesso!');
+      setProject(project.filter(data => data.id !== id));
     })
     .catch(err => console.log(err));
-  }
+  };
+
+  
 
   return (
     <div className={styles.projects}>
-      <header>
-        <h1>Meus projetos</h1>
-        <Button to="/newproject" text="Criar projeto" />
+      <header className={styles.header}>
+        <h1>Projetos</h1>
+        <Button to='/newproject' text='Criar projeto' />
       </header>
 
-      {message && <Alert type={messageType} message={message} />}
+      <Alert type={messageType} message={message} />
 
-      <ProjectCard data={projects} removeProject={removeProject} />
+      {project.length > 0 && <Card project={project} removeProject={removeProject} />}
+      {project.length === 0 && <p>Não há projetos cadastrados! <br />Clique em "Criar projeto" para criar.</p>}
     </div>
   );
 }

@@ -1,30 +1,36 @@
-import styles from './style.module.css';
-import InputText from '../../inputText';
-import Select from '../../select';
 import { useEffect, useState } from 'react';
-import Button from '../../button';
+import Button from '../../../shared/components/button';
 
-function ProjectForm({textBtn, typeBtn, handleSubmit, projectData }){
-  const [category, setCategory] = useState([]);
+import Input from '../../../shared/components/input';
+import Select from '../../../shared/components/select';
+import styles from './style.module.css';
+
+function ProjectForm({typeBtn, textBtn, handleSubmit, projectData}){
   const [project, setProject] = useState(projectData || {});
-
+  const [category, setCategory] = useState([]);
+  
   useEffect(() => {
     getCategory();
   }, []);
 
-  const getCategory = () => {
+  const getCategory = (e) => {
     fetch('http://localhost:500/categories', {
       method: 'GET',
       headers: {'Content-Type': 'application/json'}
     })
     .then(response => response.json())
-    .then(data => {
-      setCategory(data);
-    })
+    .then(data => setCategory(data))
     .catch(err => console.log(err));
-  }
+  };
 
-  const selectChange = (e) => {
+  const inputOnChange = (e) => {
+    setProject({
+      ...project,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const selectOnChange = (e) => {
     setProject({
       ...project,
       category: {
@@ -34,46 +40,40 @@ function ProjectForm({textBtn, typeBtn, handleSubmit, projectData }){
     });
   };
 
-  const inputChange = (e) => {
-    setProject({
-      ...project,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const submit = (e) => {
     e.preventDefault();
     handleSubmit(project);
   }
 
+
   return (
-    <form onSubmit={submit} className={styles.projectForm}>
-      <InputText 
+    <form className={styles.form} onSubmit={submit}>
+      <Input 
         type='text' 
         name='name' 
         text='Nome do projeto' 
         value={project.name ? project.name : ''}
         placeholder='Insira o nome do projeto' 
-        handleOnChange={inputChange}
+        handleOnChange={inputOnChange} 
       />
-      <InputText 
+      <Input 
         type='number' 
         name='budget' 
         text='Orçamento do projeto' 
         value={project.budget ? project.budget : ''}
         placeholder='Insira o orçamento total' 
-        handleOnChange={inputChange}
+        handleOnChange={inputOnChange} 
       />
       <Select 
-        name='category_id'
-        text='Selecione a categoria'
-        options={category}
-        value={project.category ? project.category.id : ''}
-        handleOnChange={selectChange}
+        name='category_id' 
+        text='Escolha a categoria' 
+        value={project.category ? project.category.id : ''} 
+        options={category} 
+        handleOnChange={selectOnChange} 
       />
-      <Button
-        type={typeBtn}
-        text={textBtn}
+      <Button 
+        type={typeBtn} 
+        text={textBtn} 
       />
     </form>
   );

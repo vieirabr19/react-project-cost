@@ -1,23 +1,34 @@
 .cards{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5em;
+  gap: 1em;
 }
 .card{
-  border: 1px solid #222;
+  border: 1px solid rgb(var(--gray), .3);
+  padding-bottom: .5em;
+}
+.card p{
+  padding: 0 .4em;
+  font-size: .9em;
+  margin-top: .6em;
+}
+.card p hr{
+  border: none;
+  background: rgb(var(--gray), .3);
+  height: 1px;
 }
 .card h1{
-  background: #222;
-  color: #ffdd22;
-  padding: .2em .5em;
+  background: rgb(var(--gray));
+  color: rgb(var(--orange));
   font-size: 1.2em;
-}
-.card p,
-.card div{
-  padding: .4em .5em;
+  padding: .2em .4em;
 }
 .actions{
   display: flex;
-  gap: .7em;
   justify-content: flex-end;
+  gap: .5em;
+}
+.footer{
+  border-top: 1px solid rgba(var(--gray), .4);
+  margin-top: .7em;
 }

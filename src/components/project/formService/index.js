@@ -1,51 +1,51 @@
 import { useState } from 'react';
-
+import Button from '../../../shared/components/button';
+import Input from '../../../shared/components/input';
 import styles from './style.module.css';
-import InputText from '../../inputText';
-import Button from '../../button';
 
 function FormService({typeBtn, textBtn, handleSubmit, projectData}){
-  const [service, setService] = useState([]);
+  const [service, setService] = useState({});
 
-  const handleChange = (e) =>{
+  const handleOnChange = (e) => {
     setService({
       ...service,
       [e.target.name]: e.target.value
     });
-  }
-
-  const submit = (e) =>{
+  };
+  
+  const submit = (e) => {
     e.preventDefault();
     projectData.services.push(service);
     handleSubmit(projectData);
   }
 
   return (
-    <form className={styles.form} onSubmit={submit}>
-      <InputText 
+    <form className={styles.form}>
+      <Input 
         type='text' 
         name='name' 
         text='Nome do serviço'
-        placeholder='Insira o nome do serviço'
-        handleOnChange={handleChange}
+        placeholder='Insira o nome do serviço' 
+        handleOnChange={handleOnChange}
       />
-      <InputText 
+      <Input 
         type='text' 
         name='cost' 
-        text='Custo do serviço'
-        placeholder='Insira o valor total'
-        handleOnChange={handleChange}
+        text='Custo do serviço' 
+        placeholder='Insira o custo do serviço' 
+        handleOnChange={handleOnChange}
       />
-      <InputText 
+      <Input 
         type='text' 
         name='description' 
-        text='Descrição do serviço'
-        placeholder='Insira a descrição'
-        handleOnChange={handleChange}
+        text='Descrição' 
+        placeholder='Insira a descrição do serviço' 
+        handleOnChange={handleOnChange}
       />
-      <Button
-        type={typeBtn}
+      <Button 
+        type={typeBtn} 
         text={textBtn}
+        onClick={submit}
       />
     </form>
   );

@@ -1,0 +1,12 @@
+.btn{
+  background: transparent;
+  text-decoration: none;
+  border: 1px solid rgba(var(--gray), .4);
+  padding: .2em .4em;
+  cursor: pointer;
+  color: rgb(var(--gray));
+}
+.btn:hover{
+  background:  rgb(var(--gray));
+  color:  rgb(var(--orange));
+}

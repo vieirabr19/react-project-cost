@@ -1,0 +1,15 @@
+.btn{
+  color: rgb(var(--orange));
+  text-decoration: none;
+  background: rgb(var(--gray));
+  padding: .3em .7em;
+  border: 0;
+  border-radius: .3em;
+  transition: .4s;
+  cursor: pointer;  
+  font-size: 1em;
+}
+.btn:hover{
+  color: rgb(var(--gray));
+  background: rgb(var(--orange));
+}

@@ -1,41 +1,38 @@
 import { useNavigate } from 'react-router-dom';
 
-import styles from './style.module.css';
 import ProjectForm from '../../components/project/form';
+import styles from './style.module.css';
 
-function NewProject() {
+function NewProject(){
   const navigate = useNavigate();
 
   const submit = (project) => {
-    createProject(project);
-  };
-
-  const createProject = (project) => {
     project.cost = 0;
     project.services = [];
-
+    project.date = new Date();
+    
     fetch('http://localhost:500/projects', {
       method: 'POST',
-      headers: {'Content-Type' : 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(project)
     })
     .then(response => response.json())
     .then(data => {
-      navigate('/projects', {state: {message: 'Projeto criado com sucesso!'}});
+      navigate('/projects', {state: {message: 'Projeto cadastrado com sucesso!'}});
     })
     .catch(err => console.log(err));
   };
 
   return (
-    <div className={styles.newproject}>
+    <div className={styles.container}>
       <header>
         <h1>Criar projeto</h1>
-        <p>Crie seu projeto para depois adicionar os serviços.</p>
+        <p>Crie e gerencie seus projetos</p>
       </header>
-      
-      <ProjectForm textBtn='Criar projeto' typeBtn='submit' handleSubmit={submit} />
+
+      <ProjectForm typeBtn='submit' textBtn='Criar projeto' handleSubmit={submit} />
     </div>
-  )
+  );
 }
 
 export default NewProject;

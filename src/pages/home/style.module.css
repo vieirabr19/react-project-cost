@@ -9,7 +9,7 @@
   text-align: center;
 }
 .home header h1 span{
-  color: #e68a2e;
+  color: rgb(var(--orange));
 }
 
 .home img{
